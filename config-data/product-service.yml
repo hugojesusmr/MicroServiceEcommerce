@@ -13,7 +13,8 @@ spring:
       port: 5672
       user: guest
       password: guest      
-
+config:
+  key: value
 eureka:
   client:
     serviceUrl:
