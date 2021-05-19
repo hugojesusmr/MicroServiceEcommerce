@@ -14,7 +14,7 @@ spring:
       user: guest
       password: guest      
 config:
-  key: value
+  key: test
 eureka:
   client:
     serviceUrl:
