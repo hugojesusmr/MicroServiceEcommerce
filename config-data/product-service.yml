@@ -9,11 +9,12 @@ spring:
     mongodb: 
         uri: mongodb://admin:secret@localhost:27017/product-service?authSource=admin
   rabbitmq:
-      host: 172.22.0.2
+      host: localhost
       port: 5672
       user: guest
       password: guest      
-
+config:
+  key: test
 eureka:
   client:
     serviceUrl:
