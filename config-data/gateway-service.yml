@@ -6,7 +6,11 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8083/eureka/
-  
+
+ribbon:
+  eureka:
+    enabled: false
+        
 spring:
   cloud:
     gateway:
@@ -21,6 +25,7 @@ spring:
         - id: order-service
           uri: lb://order-service
           predicates:
-            - Path=/api/order        
+            - Path=/api/order    
+                
   
   
