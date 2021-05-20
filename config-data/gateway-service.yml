@@ -1,6 +1,6 @@
 
 server:
-  port: 8000
+  port: 8082 
 
 eureka:
   client:
@@ -22,3 +22,15 @@ spring:
           uri: lb://order-service
           predicates:
             - Path=/api/order        
+  
+  security:
+    oauth2:
+      client:
+        keycloak:
+          client-id: spring-cloud-gateway-client 
+          client-secret: d64a5279-4fba-4814-9c0c-79b41f5bbd74  
+          authorization-grant-type: authorization_code
+          redirect-uri: http://localhost:8081/login/oauth2/code/spring-cloud-gateway-client
+        provider:
+          keycloak:
+             issuer-uri: "http://localhost:8080/auth/realms/microservices-project-realm" 
