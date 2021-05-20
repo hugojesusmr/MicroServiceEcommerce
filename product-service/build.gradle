@@ -31,8 +31,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+<<<<<<< HEAD
     implementation 'org.springframework.boot:spring-boot-starter-amqp'
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+=======
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'
+>>>>>>> 2a301610a692e6c1e99891600e5ce4ad4a24d36b
 
 	compileOnly 'org.projectlombok:lombok'
 
