@@ -13,14 +13,11 @@ spring:
       port: 5672
       user: guest
       password: guest   
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: "http://localhost:8080/auth/realms/microservices-project-realm"        
+         
 config:
   key: test
+
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8099/eureka/
+      defaultZone: http://localhost:8083/eureka/

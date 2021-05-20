@@ -5,7 +5,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8099/eureka/
+      defaultZone: http://localhost:8083/eureka/
   
 spring:
   cloud:
@@ -23,14 +23,4 @@ spring:
           predicates:
             - Path=/api/order        
   
-  security:
-    oauth2:
-      client:
-        keycloak:
-          client-id: spring-cloud-gateway-client 
-          client-secret: 9b1302b7-4198-497d-9e58-41d809b21722  
-          authorization-grant-type: authorization_code
-          redirectUriTemplate: http://localhost:8082/login/oauth2/code/spring-cloud-gateway-client
-        provider:
-          keycloak:
-            authorization-uri:http://localhost:8080/auth/realms/microservices-project-realm 
+  
