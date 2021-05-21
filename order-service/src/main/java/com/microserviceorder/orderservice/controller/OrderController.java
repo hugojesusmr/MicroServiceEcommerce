@@ -7,22 +7,21 @@ import com.microserviceorder.orderservice.dto.OrderDto;
 import com.microserviceorder.orderservice.model.Order;
 import com.microserviceorder.orderservice.repositoty.OrderRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
 @RestController
 @RequestMapping(value = "/api/order")
-@Slf4j
-@RequiredArgsConstructor
+
 public class OrderController {
 
-    private final OrderRepository orderRepository;
-    private final InventoryClient inventoryClient;
+    @Autowired
+    OrderRepository orderRepository;
+    @Autowired
+    InventoryClient inventoryClient;
     
     @PostMapping
     public String placeOrder(@RequestBody OrderDto orderDto){
