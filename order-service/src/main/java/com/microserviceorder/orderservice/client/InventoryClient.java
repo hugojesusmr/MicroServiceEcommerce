@@ -5,10 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/api/inventory")
+
 @FeignClient(name = "inventory-service")
+@RequestMapping("/api/inventory")
 public interface InventoryClient {
     
-    @GetMapping("/{skuCode}")
-    Boolean isInStock(@PathVariable String skuCode);
+    @GetMapping(value = "/{id}")
+    Boolean checkStock(@PathVariable("id") String skuCode);
 }

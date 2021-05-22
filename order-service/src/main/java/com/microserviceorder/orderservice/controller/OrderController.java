@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api/order")
-
 public class OrderController {
 
     @Autowired
@@ -30,8 +29,9 @@ public class OrderController {
         orderDto
                 .getOrderLineItemsList()
                 .stream()
-                 .allMatch(
-                     orderLineItems -> inventoryClient.isInStock(orderLineItems.getSkuCode()));
+                .allMatch(
+                    orderLineItems -> inventoryClient.checkStock(orderLineItems.getSkuCode()));
+                 
         if(allProductsInStock){
             Order order = new Order();
             order.setOrderLineItems(orderDto.getOrderLineItemsList());
