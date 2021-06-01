@@ -1,0 +1,22 @@
+server:
+  port: 8087
+  error:
+    include-message: always
+    include-binding-errors: always
+spring:
+  rabbitmq: 
+      host: localhost
+      port: 5672
+      user: guest
+      password: guest   
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: notification-events    
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8083/eureka/
+      

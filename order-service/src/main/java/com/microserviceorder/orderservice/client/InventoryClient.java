@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/api/inventory")
 public interface InventoryClient {
     
-    @GetMapping(value = "/{id}")
-    Boolean checkStock(@PathVariable("id") String skuCode);
+    @GetMapping(value = "/{skuCode}")
+    Boolean checkStock(@PathVariable("skuCode") String skuCode);
 }

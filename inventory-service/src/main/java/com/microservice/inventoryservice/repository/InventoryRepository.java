@@ -1,7 +1,10 @@
 package com.microservice.inventoryservice.repository;
 
+
+import java.util.Optional;
+
 import com.microservice.inventoryservice.model.Inventory;
 import org.springframework.data.jpa.repository.JpaRepository;
 public interface InventoryRepository extends JpaRepository<Inventory, Long>{
-    Inventory findBySkuCode(String skuCode);
+    Optional<Inventory> findBySkuCode(String skuCode);
 }
