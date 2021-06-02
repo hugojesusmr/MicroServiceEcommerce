@@ -19,6 +19,8 @@ spring:
       bindings:
         input:
           destination: notification-events    
+      source: notificationEventSupplier
+          
   
 
   jpa:
