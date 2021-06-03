@@ -14,7 +14,8 @@ spring:
       definition: notificationEventSupplier
     stream:
       bindings:
-         destination: notification-events    
+        notificationEventSupplier-out-0: 
+           destination: notification-events    
   
 eureka:
   client:
