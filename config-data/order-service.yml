@@ -17,7 +17,8 @@ spring:
   cloud:
     stream:
       bindings:
-         destination: notification-events    
+        notificationEventSupplier-out-0: 
+            destination: notification-events    
       source: notificationEventSupplier
           
   
