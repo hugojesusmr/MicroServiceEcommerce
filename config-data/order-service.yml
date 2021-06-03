@@ -25,8 +25,7 @@ spring:
         sampler:
           percentage: 1
       zipkin:
-        enabled: true
-        baseUrl: http://${tracking-host:tracking}:9411    
+          baseUrl: http://${tracking-host:tracking}:9411    
       
      
   jpa:
