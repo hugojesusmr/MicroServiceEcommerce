@@ -20,7 +20,13 @@ spring:
         notificationEventSupplier-out-0: 
           destination: notification-events  
       source: notificationEventSupplier    
-      
+  sleuth:
+        enabled: true
+        sampler:
+          percentage: 1
+      zipkin:
+        enabled: true
+        baseUrl: http://${tracking-host:tracking}:9411    
       
      
   jpa:
