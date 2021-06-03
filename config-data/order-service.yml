@@ -16,13 +16,12 @@ spring:
       password: guest   
   cloud:
     stream:
+      source: notificationEventSupplier
       bindings:
         notificationEventSupplier-out-0: 
             destination: notification-events    
-      source: notificationEventSupplier
-          
-  
-
+      
+     
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     generate-ddl: true
