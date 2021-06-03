@@ -16,10 +16,12 @@ spring:
       password: guest   
   cloud:
     stream:
+      function:
+         definition: notificationEventSupplier     
       bindings:
         notificationEventSupplier-out-0: 
             destination: notification-events  
-      source: notificationEventSupplier     
+      
       
      
   jpa:
