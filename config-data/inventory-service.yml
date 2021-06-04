@@ -11,7 +11,14 @@ spring:
       host: localhost
       port: 5672
       user: guest
-      password: guest   
+      password: guest  
+  sleuth:
+      enabled: true
+      sampler:
+         percentage: 1
+  zipkin:
+      enabled: true
+      baseUrl: http://${tracking-host:tracking}:9411  
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     generate-ddl: true
