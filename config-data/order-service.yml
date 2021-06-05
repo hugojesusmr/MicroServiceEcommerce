@@ -9,26 +9,26 @@ spring:
     url: jdbc:mysql://172.17.0.2:3306/orderservice?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: mypass123
-  rabbitmq: 
-      host: localhost
-      port: 5672
-      user: guest
-      password: guest   
+   
   cloud:
     stream:
       bindings:
         notificationEventSupplier-out-0: 
-          destination: notification-events  
+          destination: notification-events 
+          group: order
+          binder: rabbit1
+      binders:
+        rabbit1:
+          type: rabbit
+          enviroment:
+            spring:
+              rabbitmq: 
+                host: localhost
+                port: 5672
+                user: guest
+                password: guest  
       source: notificationEventSupplier    
-  sleuth:
-        enabled: true
-        sampler:
-          percentage: 1
-  zipkin:
-        enabled: true
-        baseUrl: http://${tracking-host:tracking}:9411    
-      
-     
+       
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     generate-ddl: true
