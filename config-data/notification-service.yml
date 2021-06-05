@@ -4,11 +4,6 @@ server:
     include-message: always
     include-binding-errors: always
 spring:
-  rabbitmq: 
-      host: localhost
-      port: 5672
-      user: guest
-      password: guest   
   cloud:
     stream:
       bindings:
@@ -18,11 +13,7 @@ spring:
       enabled: true
       sampler:
          percentage: 1
-  zipkin:
-      enabled: true
-      baseUrl: http://${tracking-host:tracking}:9411                  
-                    
-  
+
 eureka:
   client:
     serviceUrl:
