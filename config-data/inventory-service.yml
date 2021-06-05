@@ -22,11 +22,6 @@ spring:
       user: guest
       password: guest  
  
- sleuth:
-      enabled: true
-      sampler:
-         percentage: 1
- 
 eureka:
   client:
     serviceUrl:
