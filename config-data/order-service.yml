@@ -12,22 +12,12 @@ spring:
    
   cloud:
     stream:
+      function: 
+        definition: notificationEventSupplier
       bindings:
         notificationEventSupplier-out-0: 
-          destination: notification-events 
-          group: order
-          binder: rabbit1
-      binders:
-        rabbit1:
-          type: rabbit
-          enviroment:
-            spring:
-              rabbitmq: 
-                host: localhost
-                port: 5672
-                user: guest
-                password: guest  
-      source: notificationEventSupplier    
+          binder: rabbit
+          destination: notification-order
        
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
