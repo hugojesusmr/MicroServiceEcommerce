@@ -12,12 +12,9 @@ spring:
    
   cloud:
     stream:
-      function: 
-        definition: notificationEventSupplier
       bindings:
-        notificationEventSupplier-out-0: 
-          binder: rabbit
-          destination: notification-order
+        booleanSupplier-out-0: 
+           destination: notification-events
        
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
