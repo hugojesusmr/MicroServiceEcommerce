@@ -7,7 +7,7 @@ spring:
   cloud:
     stream:
       bindings:
-        notificationEventSupplier-out-0: 
+        notificationEventSupplier-in-0: 
            destination: notification-events    
 
 eureka:
