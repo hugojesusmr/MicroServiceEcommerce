@@ -16,7 +16,7 @@ spring:
          notificationEventSupplier-out-0: 
            destination: notification-events
            binder: kafka
-    source: notificationEventSupplier       
+          
        
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
