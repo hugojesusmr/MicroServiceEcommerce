@@ -15,6 +15,7 @@ spring:
       bindings:
         booleanSupplier-out-0: 
            destination: notification-events
+           binder: kafka
        
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
