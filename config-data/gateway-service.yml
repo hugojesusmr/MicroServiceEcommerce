@@ -27,7 +27,7 @@ spring:
           enabled: true
       routes:
         - id: product-service
-          uri: http://W4RR100R:product-service
+          uri: http://W4RR100R/product-service
           predicates:
             - Path=/api/product/**    
        
