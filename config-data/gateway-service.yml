@@ -2,6 +2,14 @@
 server:
   port: 8080 
 
+management:
+  endpoint:
+    gateway:
+      enable: true
+  endpoints:
+    web:
+      exposure:
+        include: gateway
 eureka:
   client:
     serviceUrl:
