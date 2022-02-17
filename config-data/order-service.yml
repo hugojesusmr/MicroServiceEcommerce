@@ -1,5 +1,5 @@
 server:
-  port: 8084
+  port: ${PORT:${SERVER_PORT:0}}
   error:
     include-message: always
     include-binding-errors: always
@@ -28,7 +28,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8099/eureka/
+      defaultZone: http://localhost:8761/eureka/
       
 management:
   endpoints:
