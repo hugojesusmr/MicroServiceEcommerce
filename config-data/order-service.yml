@@ -8,7 +8,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://172.17.0.2:3306/orderservice?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
-    password: mypass123
+    password: myPasswd123
    
   cloud:
     stream:
