@@ -11,8 +11,6 @@ spring:
            destination: notification-events   
            
   sleuth:
-    circuitbreaker:
-          enabled: false
     integration:
           enabled: true
 eureka:
