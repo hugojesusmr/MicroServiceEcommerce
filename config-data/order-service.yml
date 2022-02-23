@@ -16,11 +16,13 @@ spring:
          notificationEventSupplier-out-0: 
            destination: notification-events
            binder: kafka
-    circutbreaker:
-        resilience4j:
-            enabled: false
+  
           
-       
+  sleuth:
+    circuitbreaker:
+          enabled: false
+    integration:
+          enabled: true   
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     generate-ddl: true
