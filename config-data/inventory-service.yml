@@ -14,10 +14,12 @@ spring:
     show-sql: true
     hibernate:
          ddl-auto: update
- cloud:
-    circutbreaker:
-        resilience4j:
-            enabled: false
+ sleuth:
+    circuitbreaker:
+          enabled: false
+    integration:
+          enabled: true
+            
 eureka:
   client:
     serviceUrl:
