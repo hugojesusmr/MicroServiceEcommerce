@@ -9,7 +9,9 @@ spring:
       bindings:
         notificationEventSupplier-in-0: 
            destination: notification-events    
-
+  seuth:
+    circuitbreaker:
+          enabled: false
 eureka:
   client:
     serviceUrl:
