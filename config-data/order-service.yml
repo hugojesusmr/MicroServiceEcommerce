@@ -16,6 +16,9 @@ spring:
          notificationEventSupplier-out-0: 
            destination: notification-events
            binder: kafka
+    circutbreaker:
+        resilience4j:
+            enabled: false
           
        
   jpa:
@@ -24,9 +27,7 @@ spring:
     show-sql: true
     hibernate:
          ddl-auto: update
-  seuth:
-    circuitbreaker:
-          enabled: false
+  
 eureka:
   client:
     serviceUrl:
