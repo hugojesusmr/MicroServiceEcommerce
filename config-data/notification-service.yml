@@ -8,10 +8,11 @@ spring:
     stream:
       bindings:
         notificationEventSupplier-in-0: 
-           destination: notification-events    
-  seuth:
-    circuitbreaker:
-          enabled: false
+           destination: notification-events   
+           
+    circutbreaker:
+        resilience4j:
+            enabled: false
 eureka:
   client:
     serviceUrl:
