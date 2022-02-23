@@ -36,3 +36,4 @@ management:
       exposure:
          include: "*"      
       
+zipkin: http://localhost:9411
