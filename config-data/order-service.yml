@@ -24,7 +24,9 @@ spring:
     show-sql: true
     hibernate:
          ddl-auto: update
-
+  seuth:
+    circuitbreaker:
+          enabled: false
 eureka:
   client:
     serviceUrl:
