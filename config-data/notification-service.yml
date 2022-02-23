@@ -10,9 +10,11 @@ spring:
         notificationEventSupplier-in-0: 
            destination: notification-events   
            
-    circutbreaker:
-        resilience4j:
-            enabled: false
+  sleuth:
+    circuitbreaker:
+          enabled: false
+    integration:
+          enabled: true
 eureka:
   client:
     serviceUrl:
