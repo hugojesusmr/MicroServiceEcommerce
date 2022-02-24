@@ -14,11 +14,7 @@ spring:
     show-sql: true
     hibernate:
          ddl-auto: update
- sleuth:
-    circuitbreaker:
-          enabled: false
-    integration:
-          enabled: true
+
             
 eureka:
   client:
