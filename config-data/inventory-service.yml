@@ -15,7 +15,9 @@ spring:
     hibernate:
          ddl-auto: update
 
-            
+ sleuth:
+    integration:
+          enabled: true          
 eureka:
   client:
     serviceUrl:
