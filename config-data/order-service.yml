@@ -9,7 +9,12 @@ spring:
     url: jdbc:mysql://172.17.0.2:3306/orderservice?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: myPasswd123
-   
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+         ddl-auto: update
   cloud:
     stream:
       bindings:
@@ -17,18 +22,19 @@ spring:
            destination: notification-events
            binder: kafka
   
-          
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer       
   sleuth:
     circuitbreaker:
           enabled: false
     integration:
           enabled: true   
-  jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
-    generate-ddl: true
-    show-sql: true
-    hibernate:
-         ddl-auto: update
+  
   
 eureka:
   client:
