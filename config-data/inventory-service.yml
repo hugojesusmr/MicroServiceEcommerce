@@ -1,6 +1,6 @@
 
 server:
-  port: ${PORT:${SERVER_PORT:0}}
+  port: 8004
 spring:
  datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -13,21 +13,13 @@ spring:
     generate-ddl: true
     show-sql: true
     hibernate:
-         ddl-auto: update
- rabbit:
-    host: localhost
-    port: 15672
-    user: myuser
-    pass: mypassword
- sleuth:
-    integration:
-          enabled: true          
+         ddl-auto: update         
 eureka:
   client:
     serviceUrl:
       default-zone: http://localhost:8761/eureka/
   instance:
-    prefer-ip-address: true
+    hostname: localhost
       
 management:
   endpoints:
