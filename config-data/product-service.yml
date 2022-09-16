@@ -1,13 +1,13 @@
 
 server:
-  port: ${PORT:${SERVER_PORT:0}}
+  port: 8085
   error:
     include-message: always
     include-binding-errors: always
 spring:
   data:
     mongodb: 
-        uri: mongodb://admin:secret@localhost:27017/product-service?authSource=admin
+        uri: mongodb://admin:admin@localhost:27017/product-service?authSource=admin
 
 eureka:
   client:
