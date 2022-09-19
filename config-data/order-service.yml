@@ -35,19 +35,17 @@ management:
     health:
       show-details: always 
       
-resilience4j:
-  circuitbreaker:
+resilience4j.circuitbreaker:
      instances:
         inventory:
-          register-health-indicator: true
-          event-consumer-buffer-size: 10
-          sliding-window-type: count_based
-          sliding-window-size: 5
-          failure-rate-threshold: 50
-          permitted-number-of-calls-in-half-open-state: 3
-          max-wait-duration-in-half-open-state: 10s
-          wait-duration-in-open-state: 5s
-          automatic-transition-from-open-to-half-open-enabled: true
+          registerHealthIndicator: true
+          slidingWindowType: TIME_BASED
+          slidingWindowSize: 10
+          failureRateThreshold: 50
+          permittedNumberOfCallsInHalfOpenState: 3
+          waitDurationInOpenState: 5s
+          eventConsumerBufferSize: 10
+          
 
            
 
