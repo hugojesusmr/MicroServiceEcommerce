@@ -23,14 +23,7 @@ eureka:
   instance:
     hostname: localhost 
       
-management:
-  health:
-    circuitbreakers:
-      enabled: true
-  endpoints:
-    web:
-      exposure:
-        include: *
+
       
 resilience4j:
   circuitbreaker:
