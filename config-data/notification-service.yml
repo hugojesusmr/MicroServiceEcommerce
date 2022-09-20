@@ -11,7 +11,7 @@ spring:
     sampler:
      probability: 1.0      
  kafka:
-    bootstrap-servers: localhost: 9092
+    bootstrap.servers: localhost:9092
     template:
         default: notificationTopic
     consumer:
