@@ -16,18 +16,20 @@ spring:
     hibernate:
          ddl-auto: update
   kafka:
-    producer:
-       bootstrap-servers: localhost: 9092
-       template:
+    bootstrap-servers: localhost: 9092
+    template:
          default: notificationTopic
+    producer:    
        key-serializer: org.apache.kafka.comon.serialization.StringSerializer
        value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
        properties.spring.json.type.mapping: event:com.microserviceorder.orderservice.event.OrderPlacedEvent
+       
   zipkin: 
     base-url: http://localhost:9411
   sleuth:
     sampler:
-      probability: 1.0  
+      probability: 1.0
+      
 eureka:
   client:
     serviceUrl:
@@ -38,16 +40,16 @@ eureka:
 
       
 management:
-  health:
-    circuitbreakers:
-      enabled: true
-  endpoints:
-    web:
-      exposure:
-        include: health
-  endpoint:
     health:
-      show-details: always
+      circuitbreakers:
+        enabled: true
+    endpoints:
+      web:
+        exposure:
+          include: health
+    endpoint:
+      health:
+        show-details: always
 
 
 resilience4j:
