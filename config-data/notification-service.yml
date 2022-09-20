@@ -11,13 +11,11 @@ spring:
     sampler:
      probability: 1.0      
  kafka:
-    
     consumer:
         template:
             default: notificationTopic
-        bootstrap-servers: 
-        - localhost:9092
-        group-id: notificationId
+        bootstrap-servers: localhost:9092
+        group-id: notification-Id
         key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
         value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer    
         properties.spring.json.type.mapping: event:com.example.notificationservice.OrderPlacedEvent     
