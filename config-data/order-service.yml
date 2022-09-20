@@ -23,12 +23,13 @@ spring:
       probability: 1.0
   kafka:
     producer:
-       template:
-         default: notificationTopic
-       bootstrap-servers: localhost: 9092
-       key-serializer: org.apache.kafka.comon.serialization.StringSerializer
-       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-       properties.spring.json.type.mapping: event:com.microserviceorder.orderservice.event.OrderPlacedEvent    
+        template:
+            default: notificationTopic
+        bootstrap-servers: localhost:9092
+        key-serializer: org.apache.kafka.comon.serialization.StringSerializer
+        value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+        properties.spring.json.type.mapping: event:com.microserviceorder.orderservice.event.OrderPlacedEvent    
+        
 eureka:
   client:
     serviceUrl:
